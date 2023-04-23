@@ -12,8 +12,8 @@ ___
 
 Create virtual environment
 ```bash
-git clone https://gitlab.deepexi.com/sig/fastapi-starter.git
-cd fastapi-starter
+git clone https://gitlab.deepexi.com/sig/gpt-server.git
+cd gpt-server
 # Create virtual environment
 python3 -m venv env
 source env/bin/activate
