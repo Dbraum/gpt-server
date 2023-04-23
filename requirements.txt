@@ -1,5 +1,6 @@
 fastapi
 PyPDF2
+python-dotenv
 pydantic
 python-multipart
 uvicorn[standard]

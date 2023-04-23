@@ -4,9 +4,19 @@ from fastapi.middleware.cors import CORSMiddleware
 from .services import items, users,root
 
 from .logging_config import logger
+from dotenv import load_dotenv
+import os
+
+## 加载.env 环境变量
+load_dotenv()
 
 
 app = FastAPI()
+## 访问变量案例
+MONGO_URL = os.getenv("MONGO_URL")
+SECRET_KEY = os.getenv("SECRET_KEY")
+logger.debug(MONGO_URL)
+logger.debug(SECRET_KEY)
 
 origins = [
     "http://localhost",

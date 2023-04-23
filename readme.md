@@ -30,7 +30,6 @@ uvicorn app.main:app --reload
 
 
 ## Acessing on local
-The application will get started in http://127.0.0.1:8000  
 
 Swagger Documentation: http://127.0.0.1:8000/docs
 
@@ -43,7 +42,14 @@ Redoc Documentation: http://127.0.0.1:8000/redoc
 - [] 业务代码分层
 - [] 代码结构文档描述
 
+## 镜像构建
 
+```
+docker build -t deploy.deepexi.com/console-tag/gbt4-server .
+
+docker run --name gbt4-server -p 8000:8000 -d -log-driver=app.log \
+        deploy.deepexi.com/console-tag/gbt4-server
+```
 ## Development
 
 For update dependencies on `requirements.txt`, run:  

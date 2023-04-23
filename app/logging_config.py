@@ -23,3 +23,6 @@ logging_config = {
 logging.config.dictConfig(logging_config)
 
 logger = logging.getLogger("gpt-server")
+
+logger.setLevel(logging.DEBUG)
+logger.addHandler(logging.StreamHandler())  # 输出到STDERR 
