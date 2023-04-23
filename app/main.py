@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from .api.api import api_router
+
 app = FastAPI()
+
 
 origins = [
     "http://localhost",
@@ -16,25 +19,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
 
-@app.get("/items")
-def get_items():
-    return {"hello": "world"}
+app.include_router(api_router)  
 
-@app.post("/items/")
-def create_item(name: str, tag: str = None, description: str = None):
-    item = {"name": name}
-    if tag is not None:
-        item["tag"] = tag
-    if description is not None:
-        item["description"] = description
-    return item
-
-@app.get("/users/")
-def get_users(skip: int = 0, limit: int = 100):
-    users = [f"User {_}" for _ in range(100)]
-    return users[skip : skip + limit] 
+# if __name__ == '__main__':
+#     import uvicorn
+#     uvicorn.run(app, host='0.0.0.0', port=8000) 
 
