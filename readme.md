@@ -22,26 +22,6 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-Activating created virtual environment
-```bash
-source env/bin/activate 
-```
-Install app dependencies
-```bash
-pip install -r requirements-local.txt 
-```
-___
-## Running Application
-
-Starting database (postgres:alpine3.14)
-```bash
-docker-compose up
-```
-
-Starting application, run:
-```bash
-uvicorn app.main:app --reload
-```
 
 ## Acessing on local
 The application will get started in http://127.0.0.1:8000  
@@ -49,9 +29,6 @@ The application will get started in http://127.0.0.1:8000
 Swagger Documentation: http://127.0.0.1:8000/docs
 
 Redoc Documentation: http://127.0.0.1:8000/redoc
-
-Database Adminer: http://127.0.0.1:9000
-- credentials tinnova/tinnova123(user/password).
 
 ## TODO
 
