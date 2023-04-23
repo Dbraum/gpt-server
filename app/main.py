@@ -13,10 +13,10 @@ load_dotenv()
 
 app = FastAPI()
 ## 访问变量案例
-MONGO_URL = os.getenv("MONGO_URL")
-SECRET_KEY = os.getenv("SECRET_KEY")
-logger.debug(MONGO_URL)
-logger.debug(SECRET_KEY)
+PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
+PINECONE_ENVIRONMENT = os.getenv("PINECONE_ENVIRONMENT")
+logger.debug(PINECONE_API_KEY)
+logger.debug(PINECONE_ENVIRONMENT)
 
 origins = [
     "http://localhost",

@@ -21,9 +21,9 @@ ___
 git clone https://gitlab.deepexi.com/sig/gpt-server.git
 cd gpt-server
 # Create virtual environment
-python3 -m venv env
+virtualenv env
 source env/bin/activate
-pip install -r requirements.txt 
+pip install -r requirements.txt --force-reinstall
 # Starting application, run:
 uvicorn app.main:app --reload
 ```
