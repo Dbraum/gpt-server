@@ -43,9 +43,6 @@ gpt-server/app/
 ├── main.py      # 程序入口和应用实例
 ├── models.py    # 数据模型(ORM模型)
 ├── schema.py     # 数据结构/发序列化程序/输入验证、接收工厂
-├── api/    
-│   ├── api.py   # API路由
-│   ├── deps.py  # API依赖注入相关
 ├── database.py   # 数据库连接
 ├── config.py     # 配置文件    
 └── services/  
