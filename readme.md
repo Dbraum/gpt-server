@@ -62,6 +62,13 @@ For update dependencies on `requirements.txt`, run:
 pip freeze > requirements.txt
 ```
 
+### 文件上传调试
+
+```
+curl -X POST http://localhost:8000/uploadfile \
+     -H "Content-Type: multipart/form-data" \
+     -F "file=/Users/mac/Desktop/13/Best-Practices-for-Optimizing-Your-dbt-and-Snowflake-Deployment.pdf"
+```
 
 ### Source Documentation
 - [FastAPI](https://fastapi.tiangolo.com/)

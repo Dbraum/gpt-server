@@ -2,9 +2,12 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .api.api import api_router
+import logging
+
+from .logging_config import logger
+
 
 app = FastAPI()
-
 
 origins = [
     "http://localhost",
