@@ -4,21 +4,9 @@ from PyPDF2 import PdfReader
 from app.logging_config import logger
 # from app.main import logger    # 引入主文件中定义的logger
 
-api_router = APIRouter()
+router = router = APIRouter( tags=["/"])
 
-@api_router.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-@api_router.get("/items/") 
-def read_items():
-    return ["Item1", "Item2"] 
-
-@api_router.get("/users/{user_id}")  
-def read_user(user_id: int): 
-    return {"user_id": user_id}
-
-@api_router.post("/uploadfile")
+@router.post("/uploadfile")
 async def create_upload_file(file: UploadFile = File(...)):
     contents = await file.read()
     
