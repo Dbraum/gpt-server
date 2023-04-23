@@ -1,12 +1,19 @@
 # FastAPI for gpt start
 
+## 项目文件结构规划
 
-## 环境准备
-You'll must have installed:
-- [Python 3.6+](https://www.python.org/downloads/)
-- [Virtual Environments with Python3.6+](https://docs.python.org/3/tutorial/venv.html)
-- [Docker](https://docs.docker.com/engine/install/)
-- [Docker-compose](https://docs.docker.com/compose/install/)
+```
+gpt-server/app/
+├── main.py      # 程序入口和应用实例
+├── models.py    # 数据模型(ORM模型)
+├── schema.py     # 数据结构/发序列化程序/输入验证、接收工厂
+├── database.py   # 数据库连接
+├── config.py     # 配置文件    
+└── services/  
+    └── __init__.py      
+    └── service1.py  # 业务逻辑1 
+    └── service2.py  # 业务逻辑2
+```
 ___
 ## 开发环境搭建
 
@@ -36,20 +43,7 @@ Redoc Documentation: http://127.0.0.1:8000/redoc
 - [] 业务代码分层
 - [] 代码结构文档描述
 
-## 项目文件结构规划
 
-```
-gpt-server/app/
-├── main.py      # 程序入口和应用实例
-├── models.py    # 数据模型(ORM模型)
-├── schema.py     # 数据结构/发序列化程序/输入验证、接收工厂
-├── database.py   # 数据库连接
-├── config.py     # 配置文件    
-└── services/  
-    └── __init__.py      
-    └── service1.py  # 业务逻辑1 
-    └── service2.py  # 业务逻辑2
-```
 ## Development
 
 For update dependencies on `requirements.txt`, run:  
