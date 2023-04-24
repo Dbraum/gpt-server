@@ -25,6 +25,9 @@ virtualenv env
 source env/bin/activate
 pip install -r requirements.txt --force-reinstall
 # Starting application, run:
+# 启动之前需要配置.env文件内容
+cp .env.example .env
+
 uvicorn app.main:app --reload
 ```
 
