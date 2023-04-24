@@ -2,7 +2,7 @@
 
 # 镜像名称和标签
 IMAGE=deploy.deepexi.com/console-tag/gpt-server
-IMAGE_TAG=1.0.1
+IMAGE_TAG=$IMAGE_TAG
 
 # Dockerfile文件位置
 DOCKERFILE_PATH=./Dockerfile

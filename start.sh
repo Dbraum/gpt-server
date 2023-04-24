@@ -5,7 +5,7 @@ NAME=gbt4-server
 
 # 镜像名称
 IMAGE=deploy.deepexi.com/console-tag/gpt-server
-IMAGE_TAG=1.0.1
+IMAGE_TAG=$IMAGE_TAG
 
 # 设置容器路径和端口映射
 # CONTAINER_DIR=/opt

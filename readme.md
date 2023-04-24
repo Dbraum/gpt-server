@@ -45,12 +45,11 @@ Redoc Documentation: http://127.0.0.1:8000/redoc
 ## 镜像构建
 
 ```
-docker build -t deploy.deepexi.com/console-tag/gbt4-server .
+# 构建镜像
+IMAGE_TAG=1.0.2 sh ./build.sh
 
-docker rm -f gbt4-server
-docker run --name gbt4-server -p 8000:8000 -d  \
-        deploy.deepexi.com/console-tag/gbt4-server
-docker logs -f gbt4-server
+# 基于镜像启动不是
+IMAGE_TAG=1.0.2 sh ./start.sh
 ```
 ## Development
 
@@ -66,7 +65,7 @@ pip freeze > requirements.txt
 ```
 curl -X POST http://localhost:8000/uploadfile \
      -H "Content-Type: multipart/form-data" \
-     -F "file=/Users/mac/Desktop/13/Best-Practices-for-Optimizing-Your-dbt-and-Snowflake-Deployment.pdf"
+     -F "file=@/Users/mac/Desktop/13/Best-Practices-for-Optimizing-Your-dbt-and-Snowflake-Deployment.pdf"
 ```
 
 ### Source Documentation
