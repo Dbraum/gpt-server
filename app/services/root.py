@@ -19,14 +19,10 @@ router = router = APIRouter( tags=["/"])
 async def create_upload_file(background_tasks: BackgroundTasks,file: UploadFile = File(...)):
     # todo: 目前通过异步进程进行pdf解析，生产开启多线程模式增加下并发，后续需要将这些解析任务
     # 剥离到别的服务
-    try: 
-        if file.content_type != "application/pdf":
+    if file.content_type != "application/pdf":
             return JSONResponse(status_code=400, content={"error": "Only .pdf files are allowed!"})
-        background_tasks.add_task(read_pdf, file)
-        return {"message": "PDF processing in the background!"}
-    except Exception as e: 
-        logger.exception(e)
-        return {"detail": "Internal server error"}
+    background_tasks.add_task(read_pdf, file)
+    return {"message": "PDF processing in the background!"}
    
 
 async def read_pdf(file):
