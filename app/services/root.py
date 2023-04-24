@@ -21,6 +21,7 @@ async def create_upload_file(background_tasks: BackgroundTasks,file: UploadFile 
     # 剥离到别的服务
     if file.content_type != "application/pdf":
             return JSONResponse(status_code=400, content={"error": "Only .pdf files are allowed!"})
+    logger.debug("上传文件名称："+ file.filename)
     background_tasks.add_task(read_pdf, file)
     return {"message": "PDF processing in the background!"}
    
