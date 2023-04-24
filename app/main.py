@@ -18,10 +18,7 @@ PINECONE_ENVIRONMENT = os.getenv("PINECONE_ENVIRONMENT")
 logger.debug(PINECONE_API_KEY)
 logger.debug(PINECONE_ENVIRONMENT)
 
-origins = [
-    "http://localhost",
-    "http://localhost:8080",
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,

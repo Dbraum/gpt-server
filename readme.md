@@ -47,8 +47,10 @@ Redoc Documentation: http://127.0.0.1:8000/redoc
 ```
 docker build -t deploy.deepexi.com/console-tag/gbt4-server .
 
-docker run --name gbt4-server -p 8000:8000 -d -log-driver=app.log \
+docker rm -f gbt4-server
+docker run --name gbt4-server -p 8000:8000 -d  \
         deploy.deepexi.com/console-tag/gbt4-server
+docker logs -f gbt4-server
 ```
 ## Development
 

@@ -35,6 +35,8 @@ async def create_upload_file(file: UploadFile = File(...)):
             index_name = "demo"
             embeddings = OpenAIEmbeddings()
             Pinecone.from_documents(docs, embeddings, index_name=index_name)
+            logger.info(docs)
+            return {"detail": "解析并插入到pinecone成功"}
 
     except Exception as e: 
         logger.exception(e)
