@@ -4,7 +4,8 @@
 NAME=gbt4-server
 
 # 镜像名称
-IMAGE=deploy.deepexi.com/console-tag/gbt4-server
+IMAGE=deploy.deepexi.com/console-tag/gpt-server
+IMAGE_TAG=1.0.0
 
 # 设置容器路径和端口映射
 # CONTAINER_DIR=/opt
@@ -28,7 +29,7 @@ fi
 echo "Starting container..."
 docker run -d --name $NAME \
            -p $PORT \
-           $IMAGE
+           $IMAGE:${IMAGE_TAG}
 
 # 容器启动并打印日志
 echo "Container started!"
